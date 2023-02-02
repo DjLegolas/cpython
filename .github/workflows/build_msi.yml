@@ -26,7 +26,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install MSBuild 2015
-      run: choco install microsoft-visual-cpp-build-tools
+      run: choco install VisualCppBuildTools
     - name: Build CPython installer
       run: .\Tools\msi\build.bat -x86
 
@@ -36,6 +36,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install MSBuild 2015
-      run: choco install microsoft-visual-cpp-build-tools
+      run: choco install VisualCppBuildTools
     - name: Build CPython installer
       run: .\Tools\msi\build.bat -x64
