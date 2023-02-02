@@ -28,7 +28,7 @@ jobs:
     - name: Install MSBuild 2015
       run: |
             Invoke-WebRequest -Uri https://download.microsoft.com/download/E/E/D/EEDF18A8-4AED-4CE0-BEBE-70A83094FC5A/BuildTools_Full.exe -OutFile BuildTools_Full.exe
-            Start-Process -FilePath ./BuildTools_Full.exe -ArgumentList "--add", "Microsoft.VisualStudio.Component.VC.140", "--quiet", "--norestart", "--force", "--wait" -Wait -PassThru
+            Start-Process -FilePath ./BuildTools_Full.exe -ArgumentList "/InstallSelectableItems", "Microsoft.VisualStudio.Component.VC.140", "/quiet", "/norestart", "/force" -Wait -PassThru
     - name: Build CPython installer
       run: .\Tools\msi\build.bat -x86
 
@@ -40,6 +40,6 @@ jobs:
     - name: Install MSBuild 2015
       run: |
             Invoke-WebRequest -Uri https://download.microsoft.com/download/E/E/D/EEDF18A8-4AED-4CE0-BEBE-70A83094FC5A/BuildTools_Full.exe -OutFile BuildTools_Full.exe
-            Start-Process -FilePath ./BuildTools_Full.exe -ArgumentList "--add", "Microsoft.VisualStudio.Component.VC.140", "--quiet", "--norestart", "--force", "--wait" -Wait -PassThru
+            Start-Process -FilePath ./BuildTools_Full.exe -ArgumentList "/InstallSelectableItems", "Microsoft.VisualStudio.Component.VC.140", "/quiet", "/norestart", "/force" -Wait -PassThru
     - name: Build CPython installer
       run: .\Tools\msi\build.bat -x64
